@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\efawin">
+      <UniqueIdentifier>{c5316a6b-f682-4bb1-ae3a-445cba4878d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{59955036-5763-4f8f-b31d-92f9e7f4e3cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\infiniband">
+      <UniqueIdentifier>{092bb5ff-a069-45f1-8ad4-d711626bba9f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="efawin\efa.c">
+      <Filter>Source Files\efawin</Filter>
+    </ClCompile>
+    <ClCompile Include="efawin\efa_win_cmd.c">
+      <Filter>Source Files\efawin</Filter>
+    </ClCompile>
+    <ClCompile Include="efawin\efawin.c">
+      <Filter>Source Files\efawin</Filter>
+    </ClCompile>
+    <ClCompile Include="efawin\efawinif.c">
+      <Filter>Source Files\efawin</Filter>
+    </ClCompile>
+    <ClCompile Include="efawin\ibv_win_cmd.c">
+      <Filter>Source Files\efawin</Filter>
+    </ClCompile>
+    <ClCompile Include="efawin\verbs.c">
+      <Filter>Source Files\efawin</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\efawin.c">
+      <Filter>Interface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\efa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efa_io_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efa_win_cmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efaioctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efa-win-abi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efawinif.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ib_user_verbs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kern-abi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win-ibv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win-mmio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win-verbs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="infiniband\driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\efawinver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\udma_barrier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\efacompat.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\efawin.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\efawinver.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\infiniband\driver.h">
+      <Filter>Interface\infiniband</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\infiniband\efadv.h">
+      <Filter>Interface\infiniband</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\infiniband\ib_user_ioctl_verbs.h">
+      <Filter>Interface\infiniband</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\infiniband\verbs.h">
+      <Filter>Interface\infiniband</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\infiniband\verbs_api.h">
+      <Filter>Interface\infiniband</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="def\efawin.def">
+      <Filter>Source Files\efawin</Filter>
+    </None>
+    <None Include="interface\README.Efawin">
+      <Filter>Interface</Filter>
+    </None>
+  </ItemGroup>
+</Project>

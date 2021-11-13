@@ -1,0 +1,60 @@
+/;
+ ; Copyright (c) Amazon.com, Inc. or its affiliates. All rights reserved.
+ ;
+ ; This software is available to you under a choice of one of two
+ ; licenses.  You may choose to be licensed under the terms of the GNU
+ ; General Public License (GPL) Version 2, available from the file
+ ; LICENSE-GPL-2.0 in the main directory of this source tree, or the
+ ; OpenIB.org BSD license below:
+ ;
+ ;     Redistribution and use in source and binary forms, with or
+ ;     without modification, are permitted provided that the following
+ ;     conditions are met:
+ ;
+ ;      - Redistributions of source code must retain the above
+ ;        copyright notice, this list of conditions and the following
+ ;        disclaimer.
+ ;
+ ;      - Redistributions in binary form must reproduce the above
+ ;        copyright notice, this list of conditions and the following
+ ;        disclaimer in the documentation and/or other materials
+ ;        provided with the distribution.
+ ;
+ ; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ ; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ ; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ ; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ ; BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ ; ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ ; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ ; SOFTWARE.
+ ;
+
+LIBRARY efawin
+EXPORTS
+    efadv_query_ah
+    ibv_create_ah
+    ibv_destroy_ah
+    ibv_destroy_cq
+    ibv_wc_status_str
+    ibv_create_cq
+    ibv_open_device
+    ibv_get_device_list
+    ibv_close_device
+    ibv_free_device_list
+    ibv_fork_init
+    ibv_alloc_pd
+    ibv_dealloc_pd
+    ibv_create_qp
+    ibv_destroy_qp
+    ibv_modify_qp
+    ibv_qp_to_qp_ex
+    efadv_create_qp_ex
+    ibv_query_gid
+    ibv_query_port = _ibv_query_port
+    efadv_query_device
+    ibv_query_device
+    ibv_dereg_mr
+    ibv_reg_mr_iova2
+    ibv_reg_mr = _ibv_reg_mr
+    check_version

@@ -1,0 +1,9 @@
+This folder contains the files necessary to compile the export
+definitions of efawin.dll.
+
+Copy the contents of this folder into your project, add the source files 
+to your project for compilation and call efa_load_efawin_lib to load 
+the dll and efa_free_efawin_lib to free it.
+
+Once the efawin.dll is loaded, application may call any of the supported
+functions from Infiniband (ibv_*).
