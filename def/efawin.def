@@ -38,6 +38,7 @@ EXPORTS
     ibv_destroy_cq
     ibv_wc_status_str
     ibv_create_cq
+    ibv_create_cq_ex
     ibv_open_device
     ibv_get_device_list
     ibv_close_device
