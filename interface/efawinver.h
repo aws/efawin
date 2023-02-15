@@ -62,6 +62,8 @@ typedef struct ibv_cq* (*efa_win_create_cq_fn)(struct ibv_context* context, int 
     struct ibv_comp_channel* channel,
     int comp_vector);
 
+typedef struct ibv_cq_ex* (*efa_win_create_cq_ex_fn)(struct ibv_context* context, struct ibv_cq_init_attr_ex *cq_attr);
+
 typedef const char* (*efa_win_wc_status_str_fn)(enum ibv_wc_status status);
 
 typedef int (*efa_win_destroy_cq_fn)(struct ibv_cq* cq);

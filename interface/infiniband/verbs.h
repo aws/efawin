@@ -46,6 +46,7 @@
 #include <efacompat.h>
 #include <stdint.h>
 #include <sys/types.h>
+#include <stdio.h>
 #include <infiniband/verbs_api.h>
 
 
@@ -2787,19 +2788,8 @@ struct ibv_cq *ibv_create_cq(struct ibv_context *context, int cqe,
  * @context - Context CQ will be attached to
  * @cq_attr - Attributes to create the CQ with
  */
-static inline
 struct ibv_cq_ex *ibv_create_cq_ex(struct ibv_context *context,
-				   struct ibv_cq_init_attr_ex *cq_attr)
-{
-	struct verbs_context *vctx = verbs_get_ctx_op(context, create_cq_ex);
-
-	if (!vctx) {
-		errno = EOPNOTSUPP;
-		return NULL;
-	}
-
-	return vctx->create_cq_ex(context, cq_attr);
-}
+				   struct ibv_cq_init_attr_ex *cq_attr);
 
 /**
  * ibv_resize_cq - Modifies the capacity of the CQ.

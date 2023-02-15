@@ -35,7 +35,6 @@
 #include <inttypes.h>
 #include <infiniband/verbs.h>
 #include <efawinver.h>
-
 HMODULE hEfawinLib = NULL;
 
 /*
@@ -144,6 +143,11 @@ struct ibv_cq* dummy_create_cq(struct ibv_context* context, int cqe,
     return NULL;
 }
 
+struct ibv_cq* dummy_create_cq_ex(struct ibv_context* context, struct ibv_cq_init_attr_ex *cq_attr)
+{
+    return NULL;
+}
+
 const char* dummy_wc_status_str(enum ibv_wc_status status)
 {
     return NULL;
@@ -204,6 +208,7 @@ struct efawin_ops {
     efa_win_get_device_list_fn efa_win_get_device_list;
     efa_win_open_device_fn efa_win_open_device;
     efa_win_create_cq_fn efa_win_create_cq;
+    efa_win_create_cq_ex_fn efa_win_create_cq_ex;
     efa_win_wc_status_str_fn efa_win_wc_status_str;
     efa_win_destroy_cq_fn efa_win_destroy_cq;
     efa_win_destroy_ah_fn efa_win_destroy_ah;
@@ -232,6 +237,7 @@ struct efawin_ops efawin_ops = {
     .efa_win_get_device_list = dummy_get_device_list,
     .efa_win_open_device = dummy_open_device,
     .efa_win_create_cq = dummy_create_cq,
+    .efa_win_create_cq_ex = dummy_create_cq_ex,
     .efa_win_wc_status_str = dummy_wc_status_str,
     .efa_win_destroy_cq = dummy_destroy_cq,
     .efa_win_destroy_ah = dummy_destroy_ah,
@@ -269,6 +275,7 @@ int efa_load_efawin_lib()
     efa_win_get_device_list_fn efa_win_get_device_list;
     efa_win_open_device_fn efa_win_open_device;
     efa_win_create_cq_fn efa_win_create_cq;
+    efa_win_create_cq_ex_fn efa_win_create_cq_ex;
     efa_win_wc_status_str_fn efa_win_wc_status_str;
     efa_win_destroy_cq_fn efa_win_destroy_cq;
     efa_win_destroy_ah_fn efa_win_destroy_ah;
@@ -368,6 +375,12 @@ int efa_load_efawin_lib()
     if (!efa_win_create_cq) {
         goto liberror;
     }
+
+    efa_win_create_cq_ex = (efa_win_create_cq_ex_fn)GetProcAddress(hEfawinLib, "ibv_create_cq_ex");
+    if (!efa_win_create_cq_ex) {
+        goto liberror;
+    }
+
     efa_win_wc_status_str = (efa_win_wc_status_str_fn)GetProcAddress(hEfawinLib, "ibv_wc_status_str");
     if (!efa_win_wc_status_str) {
         goto liberror;
@@ -416,6 +429,7 @@ int efa_load_efawin_lib()
     efawin_ops.efa_win_get_device_list = efa_win_get_device_list;
     efawin_ops.efa_win_open_device = efa_win_open_device;
     efawin_ops.efa_win_create_cq = efa_win_create_cq;
+    efawin_ops.efa_win_create_cq_ex = efa_win_create_cq_ex;
     efawin_ops.efa_win_wc_status_str = efa_win_wc_status_str;
     efawin_ops.efa_win_destroy_cq = efa_win_destroy_cq;
     efawin_ops.efa_win_destroy_ah = efa_win_destroy_ah;
@@ -535,6 +549,11 @@ struct ibv_cq* ibv_create_cq(struct ibv_context* context, int cqe,
     int comp_vector)
 {
     return efawin_ops.efa_win_create_cq(context, cqe, cq_context, channel, comp_vector);
+}
+
+struct ibv_cq_ex *ibv_create_cq_ex(struct ibv_context* context, struct ibv_cq_init_attr_ex *cq_attr)
+{
+    return efawin_ops.efa_win_create_cq_ex(context, cq_attr);
 }
 
 const char* ibv_wc_status_str(enum ibv_wc_status status)

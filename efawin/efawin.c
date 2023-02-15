@@ -131,6 +131,13 @@ struct ibv_cq* ibv_create_cq(struct ibv_context* context, int cqe,
     return cq;
 }
 
+struct ibv_cq_ex* ibv_create_cq_ex(struct ibv_context* context, struct ibv_cq_init_attr_ex *cq_attr)
+{
+    struct ibv_cq_ex* cq = efa_ctx_ops.create_cq_ex(context, cq_attr);
+    cq->cq_context = context;
+    return cq;
+}
+
 const char* ibv_wc_status_str(enum ibv_wc_status status)
 {
     // WC status mapping is not supported
