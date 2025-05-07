@@ -39,6 +39,7 @@ If you have an incompatible driver, please update your efa driver to match the E
 Driver version compatibility is as listed below:
 - EFA_API_INTERFACE_VERSION 1 is compatible with efa.sys version 1.0.0.4
 - EFA_API_INTERFACE_VERSION 2 is compatible with efa.sys version 1.1.0.9
+- EFA_API_INTERFACE_VERSION 3 is compatible with efa.sys version 1.2.0.10
 
 EFA driver for Windows can be installed using the AWS public release S3 bucket: https://ec2-windows-drivers-efa.s3-us-west-2.amazonaws.com/Latest/EFADriver.zip
 

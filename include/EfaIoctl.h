@@ -39,7 +39,7 @@
 #define IOCTL_EFA(i_)   CTL_CODE( FILE_DEVICE_UNKNOWN, i_, METHOD_BUFFERED, FILE_ANY_ACCESS )
 #define EFA_MASK_FROM_BIT(_bit) (1<<_bit)
 
-#define EFA_API_INTERFACE_VERSION    2
+#define EFA_API_INTERFACE_VERSION    3
 #define EFA_GID_SIZE                 16
 #define MR_READ_PERMISSION           0
 #define MR_READ_WRITE_PERMISSION     1
@@ -198,7 +198,7 @@ typedef struct EFA_MR_INFO {
 }EFA_MR_INFO, * PEFA_MR_INFO;
 
 typedef struct EFA_DEREG_MR_PARAMS {
-    UINT16 LKey;
+    UINT32 LKey;
 }EFA_DEREG_MR_PARAMS, * PEFA_DEREG_MR_PARAMS;
 
 typedef struct EFA_PD_INFO {
